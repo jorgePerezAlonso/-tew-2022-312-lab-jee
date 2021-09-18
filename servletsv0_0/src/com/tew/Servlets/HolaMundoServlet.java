@@ -83,6 +83,7 @@ public class HolaMundoServlet extends HttpServlet {
 			}
 			System.out.println("<a href=\"index.html\">volver</a>");
 			Integer contador=(Integer)request.getServletContext().getAttribute("contador");
+
 			if ( contador == null ){
 				 contador = new Integer(1);
 				}
@@ -93,6 +94,12 @@ public class HolaMundoServlet extends HttpServlet {
 			
 				out.println("<br><br>" + contador +" visitas");
 				//comegh
+
+			
+			
+			
+		
+
 	}
 
 	/**
