@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Vector;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,17 +72,17 @@ public class HolaMundoServlet extends HttpServlet {
 			
 			
 			if ( nombre != null ){
-				 out.println("<br>Hola "+nombre+"<br>");
+				 //out.println("<br>Hola "+nombre+"<br>");
 				 listado.addElement(nombre);
 				}
 			request.getSession().setAttribute("listado",listado);
-			out.println("<br>");
-			out.println("Contigo, hoy me han visitado:<br>");
-			for ( int i = 0 ; i < listado.size() ; i++ ){
-				out.println("<br>"+(String)listado.elementAt(i));
+			//out.println("<br>");
+			//out.println("Contigo, hoy me han visitado:<br>");
+			//for ( int i = 0 ; i < listado.size() ; i++ ){
+				//out.println("<br>"+(String)listado.elementAt(i));
 				
-			}
-			System.out.println("<a href=\"index.html\">volver</a>");
+			//}
+			//out.println("<a href=\"index.html\">volver</a>");
 			Integer contador=(Integer)request.getServletContext().getAttribute("contador");
 
 			if ( contador == null ){
@@ -92,10 +93,14 @@ public class HolaMundoServlet extends HttpServlet {
 				// existente con la nueva.
 				getServletContext().setAttribute("contador",new Integer(contador.intValue()+1));
 			
-				out.println("<br><br>" + contador +" visitas");
+				//out.println("<br><br>" + contador +" visitas");
 				//comegh
+				
+				
+				//Hace que el servelet 1 redirija al segundo servlet
+				RequestDispatcher dispatcher = getServletContext().getNamedDispatcher("HolaMundoVista");
+				dispatcher.forward(request, response);
 
-			
 			
 			
 		
