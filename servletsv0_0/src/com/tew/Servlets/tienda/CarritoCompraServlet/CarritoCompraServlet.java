@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import tew.beans.Carrito;
 /**
  * Servlet implementation class CarritoCompraServlet
  */
@@ -37,9 +37,9 @@ public class CarritoCompraServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		@SuppressWarnings("unchecked")
-		HashMap<String, Integer> carrito = (HashMap<String, Integer>) request.getSession().getAttribute("carrito");
+		tew.beans.Carrito carrito = (Carrito) request.getSession().getAttribute("carrito");
 		if (carrito == null) {
-			carrito = new HashMap<String, Integer>();
+			carrito = new Carrito();
 		}
 
 		/*
@@ -51,20 +51,12 @@ public class CarritoCompraServlet extends HttpServlet {
 
 		// Añadimos el producto recibido al carrito de la compra (en caso de que no sea
 		// nulo!)
-		String producto = request.getParameter("producto");
-		if (producto != null) {
-			Integer cantidad = (Integer) carrito.get(producto);
-			if (cantidad == null)
-				cantidad = new Integer(1);
-			else
-				cantidad = new Integer(cantidad.intValue() + 1);
-			// Y añadimos el producto al carrito
-			carrito.put(producto, cantidad);
-		}
-		// Añadimos el carrito a la sesión
 		
-		request.getSession().setAttribute("carrito", carrito);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("CarritoCompraVista");
+		// Añadimos el carrito a la sesión
+		String producto = request.getParameter("producto");
+		carrito.anadirAlCarrito(producto);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("CarritoCompraVistaServlet");
 		dispatcher.forward(request, response);
 	}
 		
