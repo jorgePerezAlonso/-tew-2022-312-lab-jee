@@ -7,15 +7,11 @@
     
     
 	<managed-bean>
-		<managed-bean-name>Controller</managed-bean-name>
+		<managed-bean-name>controller</managed-bean-name>
 		<managed-bean-class>com.tew.presentation.BeanAlumnos</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>Controller2</managed-bean-name>
-		<managed-bean-class>com.tew.presentation.BeanAlumnos</managed-bean-class>
-		<managed-bean-scope>application</managed-bean-scope>
-	</managed-bean>
+	
 	<navigation-rule>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
@@ -24,7 +20,7 @@
 			<to-view-id>/listado.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome></from-outcome>
+			<from-outcome>alta</from-outcome>
 			<to-view-id>/altaForm.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>

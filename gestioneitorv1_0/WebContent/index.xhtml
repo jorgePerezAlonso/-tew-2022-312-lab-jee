@@ -4,17 +4,18 @@
       xmlns:h="http://java.sun.com/jsf/html"
        xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>Cabecera</title> 
+<title>Index</title> 
 </h:head>
 <h:body>
-<welcome-file>faces/index.xhtml</welcome-file>
+
+
 <h:form>
 <!-- Se invoca a un action controller (controller.listado) que retornará la etiqueta de navegación oportuna: éxito o error -->
- <h:commandLink value="Listado de alumnos" action="#{controller.listado}"/>
- <br></br>
-<!-- Aquí -->
- <br></br>
- <h:commandLink value="Alta de alumno" action="alta" actionListener="#{controller.iniciaAlumno}"/>
+  <h:commandLink value="Listado de alumnos" action="#{controller.listado}"/> 
+  <br></br>
+<!-- Aquí --> 
+  <br></br>
+  <h:commandLink value="Alta de alumno" action="alta" actionListener="#{controller.iniciaAlumno}"/>
 </h:form>
 
 </h:body>

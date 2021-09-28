@@ -24,6 +24,13 @@ public class BeanAlumnos implements Serializable{
  	public BeanAlumnos(){
 	 iniciaAlumno(null);
  	}
+ 	public void iniciaAlumno(ActionEvent event) {
+ 		 alumno.setId(null);
+ 		 alumno.setIduser("IdUser");
+ 		 alumno.setNombre("Nombre");
+ 		 alumno.setApellidos("Apellidos");
+ 		 alumno.setEmail("email@domain.com");
+ 	 	}
  	public Alumno getAlumno() {
 		return alumno;
 	}
@@ -36,13 +43,7 @@ public class BeanAlumnos implements Serializable{
 	public void setAlumnos(Alumno[] alumnos) {
 		this.alumnos = alumnos;
 	}
-	public void iniciaAlumno(ActionEvent event) {
-	 alumno.setId(null);
-	 alumno.setIduser("IdUser");
-	 alumno.setNombre("Nombre");
-	 alumno.setApellidos("Apellidos");
-	 alumno.setEmail("email@domain.com");
- 	}
+	
 	public String listado() {
 		AlumnosService service;
 		try {
