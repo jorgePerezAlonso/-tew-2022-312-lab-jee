@@ -17,6 +17,16 @@
 
 <!-- Aqu� va tu c�digo -->
 <h:form>
+<p:menubar>
+				<f:facet name="options">
+					<h:commandLink value="#{msgs.enlaceIdiomaES}"
+						actionListener="#{settings.setSpanish}">
+					</h:commandLink>
+					<h:commandLink value="#{msgs.enlaceIdiomaEN}"
+						actionListener="#{settings.setEnglish}">
+					</h:commandLink>
+				</f:facet>
+			</p:menubar>
 <p:panelGrid columns="2">
   "#{msgs.tablaNombre}"     <h:inputText value="#{controller.alumno.nombre}"/>
   "#{msgs.tablaApellidos}"  <h:inputText value="#{controller.alumno.apellidos}"/>
