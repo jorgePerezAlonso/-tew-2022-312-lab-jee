@@ -28,21 +28,22 @@
 					</h:commandLink>
 				</f:facet>
 			</p:menubar>
-<p:dataTable var="alumno" 
+<p:dataTable var="valumno" 
              value="#{controller.alumnos}"
              border="1">
-  <p:column><f:facet name="header">"#{msgs.nombre}"</f:facet>#{alumno.nombre}</p:column>
-  <p:column><f:facet name="header">"#{msgs.apellido}"</f:facet>#{alumno.apellidos}</p:column>
-  <p:column><f:facet name="header">"#{msgs.userid}"</f:facet>#{alumno.iduser}</p:column>
-  <p:column><f:facet name="header">"#{msgs.correo}"</f:facet>#{alumno.email}</p:column>
+  <p:column><f:facet name="header">"#{msgs.nombre}"</f:facet>#{valumno.nombre}</p:column>
+  <p:column><f:facet name="header">"#{msgs.apellido}"</f:facet>#{valumno.apellidos}</p:column>
+  <p:column><f:facet name="header">"#{msgs.userid}"</f:facet>#{valumno.iduser}</p:column>
+  <p:column><f:facet name="header">"#{msgs.correo}"</f:facet>#{valumno.email}</p:column>
   <p:column><f:facet name="header">"#{msgs.tablaBaja}"</f:facet>
-     <p:commandLink action="#{controller.baja}" type="submit" value="BAJA" immediate="true">
-         <f:setPropertyActionListener target="#{controller.alumno}" value="#{alumno}"/>
+     <p:commandLink action="#{controller.baja(valumno)}" type="submit" value="BAJA" immediate="true">
+         
+          
      </p:commandLink>
   </p:column>
   <p:column><f:facet name="header">"#{msgs.tablaEditar}"</f:facet>
-     <p:commandLink action="editar" type="submit" value="EDITAR" immediate="true">
-         <f:setPropertyActionListener target="#{controller.alumno}" value="#{alumno}"/>
+     <p:commandLink action="editar" type="submit" value="#{msgs.tablaEditar}" immediate="true" actionListener="#{alumno.setAlumno(valumno)}>
+        
      </p:commandLink>
   </p:column>
 </p:dataTable>
