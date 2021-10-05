@@ -36,13 +36,13 @@
   <p:column><f:facet name="header">"#{msgs.userid}"</f:facet>#{valumno.iduser}</p:column>
   <p:column><f:facet name="header">"#{msgs.correo}"</f:facet>#{valumno.email}</p:column>
   <p:column><f:facet name="header">"#{msgs.tablaBaja}"</f:facet>
-     <p:commandLink action="#{controller.baja(valumno)}" type="submit" value="BAJA" immediate="true">
+     <p:commandLink action="#{controller.baja(valumno)}" type="submit" value="#{msgs.tablaBaja}" immediate="true">
          
           
      </p:commandLink>
   </p:column>
   <p:column><f:facet name="header">"#{msgs.tablaEditar}"</f:facet>
-     <p:commandLink action="editar" type="submit" value="#{msgs.tablaEditar}" immediate="true" actionListener="#{alumno.setAlumno(valumno)}>
+     <p:commandLink action="editar" type="submit" value="#{msgs.tablaEditar}" immediate="true" actionListener="#{alumno.setAlumno(valumno)}">
         
      </p:commandLink>
   </p:column>

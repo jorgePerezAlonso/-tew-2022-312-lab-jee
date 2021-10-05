@@ -34,16 +34,10 @@ public void setAlumno(BeanAlumno alumno) {this.alumno = alumno;}
 
 @PostConstruct
 public void init() {
-	System.out.println("BeanAlumnos - PostConstruct");
-	//Buscamos el alumno en la sesión. Esto es un patrón factoría claramente.
-	alumno = (BeanAlumno) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get(new String("alumno"));
-	//si no existe lo creamos e inicializamos
-	if (alumno == null) {
-		System.out.println("BeanAlumnos - No existia");
-		alumno = new BeanAlumno();
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put( "alumno", alumno);
+	alumno= Factories.alumnofac.createAlumno();
+	
 	}
-}
+
 @PreDestroy
 public void end() {
 	System.out.println("BeanAlumnos - PreDestroy");
@@ -57,9 +51,7 @@ public void setAlumnos(Alumno[] alumnos) {
 	this.alumnos = alumnos;
 }
 private Alumno[] alumnos = null;
-  public BeanAlumnos(){
-    iniciaAlumno(null);
-  }
+
   public void iniciaAlumno(ActionEvent event) {
 	  FacesContext facesContext = FacesContext.getCurrentInstance();
 	//Obtenemos el archivo de propiedades correspondiente al idioma que

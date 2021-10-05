@@ -1,9 +1,12 @@
 package com.tew.infrastructure;
 
+
+import impl.tew.business.SimpleAlumnoFactory;
 import impl.tew.business.SimpleServicesFactory;
 import impl.tew.persistence.SimplePersistenceFactory;
 
 import com.tew.persistence.PersistenceFactory;
+import com.tew.presentation.FactoriaAlumno;
 import com.tew.business.ServicesFactory;
 
 /**
@@ -28,5 +31,6 @@ public class Factories {
 
 	public static ServicesFactory services = new SimpleServicesFactory();
 	public static PersistenceFactory persistence = new SimplePersistenceFactory();
+	public static FactoriaAlumno alumnofac = new SimpleAlumnoFactory();
 
 }
