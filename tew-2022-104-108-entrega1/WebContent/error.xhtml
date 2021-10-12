@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+<!-- Si se quisiera tomar el idioma del navegador -->
+<!-- <f:view locale="#{facesContext.externalContext.requestLocale}"> -->
+<!-- Para tomar el idioma del bean de configuración BeanSettings -->
+<f:view locale="#{settings.locale}">
+
+
+<h:head>
+<title>Cabecera</title> 
+</h:head>
+
+
+<h:body>
+		<h:form>
+		<p:menubar>
+				<f:facet name="options">
+					<h:commandLink value="#{msgs.enlaceIdiomaES}"
+						actionListener="#{settings.setSpanish}">
+					</h:commandLink>
+					<h:commandLink value="#{msgs.enlaceIdiomaEN}"
+						actionListener="#{settings.setEnglish}">
+					</h:commandLink>
+				</f:facet>
+			</p:menubar>
+			<h1>"#{msgs.tituloAplicacion1}"</h1>
+			<br />
+			<h2>"#{msgs.tituloAplicacion2}"</h2>
+			<br />
+			<br />
+			<br />
+			<h1>"#{msgs.mensajeError1}"</h1>
+			<p>"#{msgs.mensajeError2}"</p>
+			<p>"#{msgs.mensajeError3}"</p>
+
+			<p:commandLink value="#{msgs.enlaceCasa}" action="index.xhtml" />
+		</h:form>
+  <p:commandLink value="#{msgs.enlaceCasa}" action="index.xhtml" />
+</h:body>
+<f:view>
+</html>
