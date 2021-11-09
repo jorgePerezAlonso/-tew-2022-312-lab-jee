@@ -29,7 +29,7 @@ public class Alumno {
 	public String getNombre() {
 		return nombre;
 	}
-	@XmlElement
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -37,7 +37,7 @@ public class Alumno {
 	public String getApellidos() {
 		return apellidos;
 	}
-	@XmlElement
+	
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
@@ -45,7 +45,7 @@ public class Alumno {
 	public String getIduser() {
 		return iduser;
 	}
-	@XmlElement
+	
 	public void setIduser(String iduser) {
 		this.iduser = iduser;
 	}
@@ -53,10 +53,11 @@ public class Alumno {
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@XmlElement
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
